@@ -1,0 +1,2 @@
+rootProject.name='Memorise'
+include ':app'
