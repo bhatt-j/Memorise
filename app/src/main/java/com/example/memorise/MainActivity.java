@@ -9,7 +9,7 @@ import android.os.Handler;
 import com.airbnb.lottie.LottieAnimationView;
 
 public class MainActivity extends AppCompatActivity {
-    private static int SPLASH_TIME_OUT=9000;
+    private static int SPLASH_TIME_OUT=5000;
     LottieAnimationView lottieAnimationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
