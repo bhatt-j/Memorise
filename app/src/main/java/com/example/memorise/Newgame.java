@@ -2,90 +2,117 @@ package com.example.memorise;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import java.util.Random;
+
 
 public class Newgame extends AppCompatActivity {
+
+    TextView tv_level, tv_number;
+
+    EditText et_number;
+
+    Button b_confirm;
+
+    Random r;
+
+    int currentLevel = 1;
+
+    String generatedNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_newgame);
 
-        Button btn1 = (Button) findViewById(R.id.btn1);
-        Button btn2 = (Button) findViewById(R.id.btn2);
-        Button btn3 = (Button) findViewById(R.id.btn3);
-        Button btn4 = (Button) findViewById(R.id.btn4);
-        Button btn5 = (Button) findViewById(R.id.btn5);
-        Button btn6 = (Button) findViewById(R.id.btn6);
-        Button btn7 = (Button) findViewById(R.id.btn7);
-        Button btn8 = (Button) findViewById(R.id.btn8);
-        Button btn9 = (Button) findViewById(R.id.btn9);
-        Button btndone = (Button) findViewById(R.id.btndone);
-        Button btn0 = (Button) findViewById(R.id.btn0);
-        Button btndelete = (Button) findViewById(R.id.btndelete);
+            tv_level =  findViewById(R.id.tv_level);
+            tv_number = findViewById(R.id.tv_number);
+            et_number = findViewById(R.id.et_number);
+            b_confirm = findViewById(R.id.b_cofirm);
 
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
-        btn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
-        btn4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
-        btn5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
-        btn6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
-        btn7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
-        btn8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
-        btn9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
-        btndone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
-        btn0.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
+            r = new Random();
 
-        btndelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            //hide the input and the number and show the number
+            et_number.setVisibility(View.GONE);
+            b_confirm.setVisibility(View.GONE);
+            tv_number.setVisibility(View.VISIBLE);
+
+            // display the current level
+            tv_level.setText("Level: " + currentLevel);
+
+            //display random number according to the level
+            generatedNumber = generateNumber(currentLevel);
+            tv_number.setText(generatedNumber);
+
+            //display the elements after 2 second and hide the number
+            new Handler().postDelayed(new Runnable(){
+                @Override
+                public void run(){
+                    tv_number.setVisibility(View.GONE);
+
+                    et_number.setVisibility(View.VISIBLE);
+                    b_confirm.setVisibility(View.VISIBLE);
+                    et_number.requestFocus();
+                }
+            }, 2000);
+
+            b_confirm.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //check if the numbers are the same
+                    if (generatedNumber.equals(et_number.getText().toString())){
+                        //hide the input and the number and show the number
+                        et_number.setVisibility(View.GONE);
+                        b_confirm.setVisibility(View.GONE);
+                        tv_number.setVisibility(View.VISIBLE);
+
+                        //remove text from input
+                        et_number.setText("");
+
+                        //increase the current level
+                        currentLevel++;
+
+                        //display the current level
+                        tv_level.setText("Level: " + currentLevel);
+                        //display random number according to the level
+                        generatedNumber = generateNumber(currentLevel);
+                        tv_number.setText(generatedNumber);
+                        //display the elements after the second and hide the number
+                        new android.os.Handler().postDelayed(new Runnable(){
+                            @Override
+                            public void run(){
+                                tv_number.setVisibility(View.GONE);
+                                et_number.setVisibility(View.VISIBLE);
+                                b_confirm.setVisibility(View.VISIBLE);
+                                et_number.requestFocus();
+                            }
+                        }, 2000);
+
+                    }else {
+                        tv_level.setText("Game over! the numer was" + generatedNumber);
+                        b_confirm.setEnabled(false);
+
+                    }
+                }
+            });
+
+        }
+        private String generateNumber(int digits){
+            String output = "";
+            for (int i = 0; i<=digits; i++){
+                int randomDigit =  r.nextInt(10);
+                output = output + "" + randomDigit;
             }
-        });
-    }
+            return output;
+        }
+
+
+
 }

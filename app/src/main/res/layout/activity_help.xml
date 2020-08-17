@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D9543F"
+    android:background="#f4d19d"
     tools:context=".Help">
 
     <TextView
@@ -38,4 +38,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/helptxt" />
+
+
+    <TextView
+        android:id="@+id/rulestxt"
+        android:layout_width="337dp"
+        android:layout_height="53dp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginRight="37dp"
+        android:text="Rules?"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.635"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/helptxt" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

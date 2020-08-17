@@ -1,10 +1,13 @@
 package com.example.memorise;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class HomeActivity extends AppCompatActivity {
@@ -46,22 +49,33 @@ public class HomeActivity extends AppCompatActivity {
         });
         quitgame.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                moveTaskToBack(true);
-                android.os.Process.killProcess(android.os.Process.myPid());
-                System.exit(1);
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
+                builder.setTitle("Exit");
+                builder.setMessage("Do You Want Exit?");
+                builder.setPositiveButton("Yes,Go Ahed", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        finish();
+                    }
+                });
+                builder.setNegativeButton("No,Not Now", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                AlertDialog dialog =builder.create();
+                dialog.show();
             }
-
-
         });
-
-
+        
     }
+
     public void openNewgame(){
         Intent intent = new Intent(this,Newgame.class);
         startActivity(intent);
     }
-
     public void openHelp(){
             Intent intent = new Intent(this,Help.class);
             startActivity(intent);
@@ -71,6 +85,7 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this,Setting.class);
         startActivity(intent);
     }
+    
 }
 
 
