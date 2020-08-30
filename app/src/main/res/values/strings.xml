@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">Memorise</string>
     <string name="memorise">Memorise</string>
+    <string name="newg">New Game</string>
+    <string name="play_game">Play Game</string>
+    <string name="help_txt">Help</string>
+    <string name="setting_txt">Setting</string>
+    <string name="quit_game">Quit Game</string>
+    <string name="ask">what was the number??</string>
+    <string name="confirm_string">Confirm</string>
+    <string name="a_memory_test_game">A Memory Test Game</string>
+    <string name="memorise_str">Memorise</string>
+    <string name="help_str">Help</string>
+    <string name="how_to_play_str">How To Play?</string>
+    <string name="rules_str">Rules</string>
 </resources>

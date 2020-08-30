@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#f4d19d"
+    android:background="@drawable/grad"
     android:visibility="visible"
     tools:context=".Newgame"
     tools:layout_editor_absoluteY="81dp">
@@ -14,35 +14,36 @@
     <TextView
         android:id="@+id/tv_level"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#D9534F"
+        android:layout_height="58dp"
+        android:fontFamily="serif"
         android:text="Level : 1"
         android:textColor="#FFFFFF"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
 
     <TextView
         android:id="@+id/tv_number"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="231dp"
         android:layout_marginTop="20dp"
-        android:background="#D9534F"
-        android:text="0"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp" />
-
+        android:textColor="#000"
+        android:gravity="center"
+        android:textSize="50sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/et_number"
         style="@style/Widget.AppCompat.AutoCompleteTextView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="#D9534F"
+        android:layout_height="92dp"
+        android:layout_marginTop="200dp"
+        android:background="#EAE2E2"
         android:digits="1234567890"
         android:ems="10"
-        android:hint="what was the number??"
+        android:hint="@string/ask"
         android:inputType="numberSigned"
-        android:textColor="#FFFFFF"
+        android:textColor="#000"
         android:textSize="30sp"
         android:visibility="visible"
         tools:visibility="visible" />
@@ -52,8 +53,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="#D9534F"
-        android:text="Confirm"
+        android:background="#329309"
+        android:text="@string/confirm_string"
         android:textColor="#FFFFFF"
         android:textColorHint="#D9534F"
         android:textSize="30sp" />

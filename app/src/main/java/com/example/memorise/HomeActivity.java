@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,16 +14,16 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-        final Button newgame = (Button) findViewById(R.id.newgame);
+      //  getSupportActionBar().hide();
+        final Button new_game = (Button) findViewById(R.id.new_game);
         final Button help = (Button) findViewById(R.id.help);
-        Button setting = (Button) findViewById(R.id.setting);
-        Button quitgame = (Button) findViewById(R.id.quitgame);
+       // Button setting = (Button) findViewById(R.id.setting);
+        Button quit_game = (Button) findViewById(R.id.quit_game);
 
-        newgame.setOnClickListener(new View.OnClickListener() {
+        new_game.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openNewgame();
+                open_New_game();
             }
 
 
@@ -38,21 +37,21 @@ public class HomeActivity extends AppCompatActivity {
 
 
         });
-        setting.setOnClickListener(new View.OnClickListener() {
+       /* setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openSetting();
             }
 
 
-        });
-        quitgame.setOnClickListener(new View.OnClickListener() {
+        });*/
+        quit_game.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
                     builder.setTitle("Exit");
                     builder.setMessage("Do You Want Exit?");
-                    builder.setPositiveButton("Yes,Go Ahed", new DialogInterface.OnClickListener(){
+                    builder.setPositiveButton("Yes, Quit Game", new DialogInterface.OnClickListener(){
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             finish();
@@ -74,7 +73,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
     }
-    public void openNewgame(){
+    public void open_New_game(){
         Intent intent = new Intent(this,Newgame.class);
         startActivity(intent);
     }
@@ -84,10 +83,10 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
-    public void openSetting(){
+    /*public void openSetting(){
         Intent intent = new Intent(this,Setting.class);
         startActivity(intent);
-    }
+    }*/
 }
 
 

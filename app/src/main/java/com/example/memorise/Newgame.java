@@ -1,7 +1,9 @@
 package com.example.memorise;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,22 +18,17 @@ import java.util.Random;
 public class Newgame extends AppCompatActivity {
 
     TextView tv_level, tv_number;
-
     EditText et_number;
-
     Button b_confirm;
-
     Random r;
-
     int currentLevel = 1;
-
     String generatedNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_newgame);
-
+     //   getSupportActionBar().hide();
         tv_level =  findViewById(R.id.tv_level);
         tv_number = findViewById(R.id.tv_number);
         et_number = findViewById(R.id.et_number);
@@ -96,8 +93,21 @@ public class Newgame extends AppCompatActivity {
                     }, 2000);
 
                 }else {
-                    tv_level.setText("Game over! the numer was" + generatedNumber);
-                    b_confirm.setEnabled(false);
+                            tv_number.setVisibility(View.VISIBLE);
+                            tv_number.setText("Game over! the number was" + generatedNumber+ ". Better luck next time");
+                            b_confirm.setEnabled(false);
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(Newgame.this);
+                    builder.setTitle("Exit");
+                    builder.setMessage("Do You Want Exit?");
+                    builder.setPositiveButton("Yes, Quit Game", new DialogInterface.OnClickListener(){
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            finish();
+                        }
+                    });
+                    AlertDialog dialog =builder.create();
+                    dialog.show();
 
                 }
             }
