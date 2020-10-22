@@ -7,17 +7,26 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
+    android:gravity="center"
     android:background="#f4d19d"
     tools:context=".HomeActivity"
     tools:layout_editor_absoluteY="81dp">
 
-    <Button
+   <!-- <Button
         android:id="@+id/newgame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
         android:background="#D9543F"
         android:text="New Game" />
+-->
+    <Button
+        android:id="@+id/start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#D9543F"
+        android:text="Start Game" />
 
     <Button
         android:id="@+id/help"

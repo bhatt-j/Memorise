@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Setting"></activity>
+        <activity android:name=".Hard_level"></activity>
+        <activity android:name=".Medium_level" />
+        <activity android:name=".level" />
+        <activity android:name=".Setting" />
         <activity android:name=".Help" />
         <activity android:name=".Newgame" />
         <activity android:name=".HomeActivity" />

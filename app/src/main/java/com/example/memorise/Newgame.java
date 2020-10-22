@@ -37,6 +37,7 @@ public class Newgame extends AppCompatActivity {
         et_number = findViewById(R.id.et_number);
         b_confirm = findViewById(R.id.b_cofirm);
 
+
         r = new Random();
 
         //hide the input and the number and show the number
@@ -66,6 +67,7 @@ public class Newgame extends AppCompatActivity {
         b_confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(Newgame.this,level.class);
                 //check if the numbers are the same
                 if (generatedNumber.equals(et_number.getText().toString())){
                     //hide the input and the number and show the number
@@ -78,6 +80,7 @@ public class Newgame extends AppCompatActivity {
 
                     //increase the current level
                     currentLevel++;
+                    //intent.putExtra("HIGH-SCORE" ,currentLevel);
 
                     //display the current level
                     tv_level.setText("Level: " + currentLevel);
@@ -95,8 +98,12 @@ public class Newgame extends AppCompatActivity {
                         }
                     }, 2000);
 
+
+
                 }else {
-                    tv_level.setText("Game over! the numer was" + generatedNumber);
+                    tv_level.setText("Game over! the numer was : " + generatedNumber);
+
+                    startActivity(intent);
                     b_confirm.setEnabled(false);
 
                 }
@@ -106,7 +113,7 @@ public class Newgame extends AppCompatActivity {
     }
     private String generateNumber(int digits){
         String output = "";
-        for (int i = 0; i<=digits; i++){
+        for (int i = 0; i<digits; i++){
             int randomDigit =  r.nextInt(10);
             output = output + "" + randomDigit;
         }

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Medium_level"
+    android:background="#f4d19d"
+    android:visibility="visible">
+
+
+    <TextView
+        android:id="@+id/tv_level"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D9534F"
+        android:text="Level : 1"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tv_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#D9534F"
+        android:text="0"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
+
+
+    <EditText
+        android:id="@+id/et_number"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#D9534F"
+        android:digits="1234567890"
+        android:ems="10"
+        android:hint="what was the number??"
+        android:inputType="numberSigned"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:visibility="visible"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/b_cofirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#D9534F"
+        android:text="Confirm"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#D9534F"
+        android:textSize="30sp" />
+</LinearLayout>

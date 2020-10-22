@@ -16,19 +16,32 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        final Button newgame = (Button) findViewById(R.id.newgame);
+        //final Button newgame = (Button) findViewById(R.id.newgame);
+        final Button start =(Button) findViewById(R.id.start);
         final Button help = (Button) findViewById(R.id.help);
         Button setting = (Button) findViewById(R.id.setting);
         Button quitgame = (Button) findViewById(R.id.quitgame);
 
-        newgame.setOnClickListener(new View.OnClickListener() {
+       /* newgame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openNewgame();
+           //     openNewgame();
+                openlevel();
+            }
+
+
+        });*/
+
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //     openNewgame();
+                openstart();
             }
 
 
         });
+
 
         help.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,8 +87,13 @@ public class HomeActivity extends AppCompatActivity {
 
 
     }
-    public void openNewgame(){
+    /*public void openNewgame(){
         Intent intent = new Intent(this,Newgame.class);
+        startActivity(intent);
+    }*/
+
+    public void openstart(){
+        Intent intent = new Intent(this,level.class);
         startActivity(intent);
     }
 
