@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#f4d19d"
+    android:background="#C9C9C9"
     android:visibility="visible"
     tools:context=".Hard_level">
 
@@ -13,7 +13,7 @@
         android:id="@+id/tv_level"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#D9534F"
+        android:background="#0099D2"
         android:text="Level : 1"
         android:textColor="#FFFFFF"
         android:textSize="30sp" />
@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="#D9534F"
+        android:background="#0099D2"
         android:text="0"
         android:textColor="#FFFFFF"
         android:textSize="30sp" />
@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="#D9534F"
+        android:background="#0099D2"
         android:digits="1234567890"
         android:ems="10"
         android:hint="what was the number??"
@@ -50,10 +50,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="#D9534F"
+        android:background="#0099D2"
         android:text="Confirm"
         android:textColor="#FFFFFF"
-        android:textColorHint="#D9534F"
+        android:textColorHint="#0099D2"
         android:textSize="30sp" />
 
 </LinearLayout>

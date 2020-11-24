@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f4d19d"
+    android:background="#C9C9C9"
     tools:context=".Setting">
 
     <TextView
@@ -24,7 +24,7 @@
         android:shadowDy = "+2"
         android:shadowRadius = "1"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#D9543F"
+        android:textColor="#0099D2"
         android:textSize="40dp"
         android:textStyle="bold|italic"
         android:verticalScrollbarPosition="defaultPosition"

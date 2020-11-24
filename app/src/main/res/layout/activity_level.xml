@@ -7,7 +7,7 @@
     android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f4d19d"
+    android:background="#C9C9C9"
     tools:context=".level">
 
    <!-- <TextView
@@ -21,7 +21,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="20dp"
-    android:background="#D9543F"
+    android:background="#0099D2"
     android:text="Easy Level" />
 
     <Button
@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="#D9543F"
+        android:background="#0099D2"
         android:text="Medium Level" />
 
     <Button
@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="#D9543F"
+        android:background="#0099D2"
         android:text="Hard Level" />
 
 
