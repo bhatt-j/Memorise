@@ -2,17 +2,20 @@ package com.example.memorise;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import java.util.Random;
 
 public class Hard_level extends AppCompatActivity {
-    TextView tv_level, tv_number;
+    TextView tv_level, tv_number , progress;
 
     EditText et_number;
 
@@ -21,7 +24,8 @@ public class Hard_level extends AppCompatActivity {
     Random r;
 
     int currentLevel = 1;
-
+    SeekBar seekbar;
+    int pr = 5;
     String generatedNumber;
 
     @Override
@@ -33,7 +37,8 @@ public class Hard_level extends AppCompatActivity {
         tv_number = findViewById(R.id.tv_number);
         et_number = findViewById(R.id.et_number);
         b_confirm = findViewById(R.id.b_cofirm);
-
+        seekbar = findViewById(R.id.seekBar2);
+        progress =  findViewById(R.id.progress);
         r = new Random();
 
         //hide the input and the number and show the number
@@ -76,6 +81,10 @@ public class Hard_level extends AppCompatActivity {
                     //increase the current level
                     currentLevel++;
 
+                    pr = pr +9;
+
+                    seekbar.setVisibility(View.VISIBLE);
+                    seekbar.setProgress(pr);
                     //display the current level
                     tv_level.setText("Level: " + currentLevel);
                     //display random number according to the level
@@ -93,8 +102,28 @@ public class Hard_level extends AppCompatActivity {
                     }, 5000);
 
                 }else {
-                    tv_level.setText("Game over! the numer was" + generatedNumber);
-                    b_confirm.setEnabled(false);
+                    et_number.setVisibility(View.GONE);
+                    b_confirm.setVisibility(View.GONE);
+                    tv_level.setText("Game over! the number was : " + generatedNumber);
+                    seekbar.setVisibility(View.VISIBLE);
+                    seekbar.setProgress(pr);
+                    progress.setVisibility(View.VISIBLE);
+                    progress.setText("Your progress: "+pr+" %" );
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(Hard_level.this);
+                    builder.setTitle("Exit");
+                    builder.setMessage("Do You Want Exit?");
+                    builder.setPositiveButton("Yes, Quit Game", new DialogInterface.OnClickListener(){
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            finish();
+                        }
+                    });
+                    AlertDialog dialog =builder.create();
+                    dialog.show();
+
+                    //startActivity(intent);
+                    //b_confirm.setEnabled(false);
 
                 }
             }

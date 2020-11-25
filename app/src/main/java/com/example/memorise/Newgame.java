@@ -2,12 +2,16 @@ package com.example.memorise;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -15,16 +19,16 @@ import java.util.Random;
 
 public class Newgame extends AppCompatActivity {
 
-    TextView tv_level, tv_number;
+    TextView tv_level, tv_number , progress;
 
     EditText et_number;
 
     Button b_confirm;
 
     Random r;
-
+    SeekBar seekbar;
     int currentLevel = 1;
-
+    int pr = 5;
     String generatedNumber;
 
     @Override
@@ -32,12 +36,13 @@ public class Newgame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_newgame);
 
+
         tv_level =  findViewById(R.id.tv_level);
         tv_number = findViewById(R.id.tv_number);
         et_number = findViewById(R.id.et_number);
         b_confirm = findViewById(R.id.b_cofirm);
-
-
+        seekbar = findViewById(R.id.seekBar2);
+        progress =  findViewById(R.id.progress);
         r = new Random();
 
         //hide the input and the number and show the number
@@ -82,6 +87,10 @@ public class Newgame extends AppCompatActivity {
                     currentLevel++;
                     //intent.putExtra("HIGH-SCORE" ,currentLevel);
 
+                    pr = pr +5;
+
+                    seekbar.setVisibility(View.VISIBLE);
+                    seekbar.setProgress(pr);
                     //display the current level
                     tv_level.setText("Level: " + currentLevel);
                     //display random number according to the level
@@ -97,14 +106,29 @@ public class Newgame extends AppCompatActivity {
                             et_number.requestFocus();
                         }
                     }, 2000);
-
-
-
                 }else {
-                    tv_level.setText("Game over! the numer was : " + generatedNumber);
+                    et_number.setVisibility(View.GONE);
+                    b_confirm.setVisibility(View.GONE);
+                    tv_level.setText("Game over! the number was : " + generatedNumber);
+                    seekbar.setVisibility(View.VISIBLE);
+                    seekbar.setProgress(pr);
+                    progress.setVisibility(View.VISIBLE);
+                    progress.setText("Your progress: "+pr+" %" );
 
-                    startActivity(intent);
-                    b_confirm.setEnabled(false);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(Newgame.this);
+                    builder.setTitle("Exit");
+                    builder.setMessage("Do You Want Exit?");
+                    builder.setPositiveButton("Yes, Quit Game", new DialogInterface.OnClickListener(){
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            finish();
+                        }
+                    });
+                    AlertDialog dialog =builder.create();
+                    dialog.show();
+
+                    //startActivity(intent);
+                    //b_confirm.setEnabled(false);
 
                 }
             }

@@ -19,7 +19,6 @@ public class HomeActivity extends AppCompatActivity {
         //final Button newgame = (Button) findViewById(R.id.newgame);
         final Button start =(Button) findViewById(R.id.start);
         final Button help = (Button) findViewById(R.id.help);
-        Button setting = (Button) findViewById(R.id.setting);
         Button quitgame = (Button) findViewById(R.id.quitgame);
 
        /* newgame.setOnClickListener(new View.OnClickListener() {
@@ -51,21 +50,13 @@ public class HomeActivity extends AppCompatActivity {
 
 
         });
-        setting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openSetting();
-            }
-
-
-        });
         quitgame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
                     builder.setTitle("Exit");
                     builder.setMessage("Do You Want Exit?");
-                    builder.setPositiveButton("Yes,Go Ahed", new DialogInterface.OnClickListener(){
+                    builder.setPositiveButton("Yes", new DialogInterface.OnClickListener(){
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             finish();

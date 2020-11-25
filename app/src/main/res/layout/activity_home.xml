@@ -36,13 +36,6 @@
         android:background="#0099D2"
         android:text="Help" />
 
-    <Button
-        android:id="@+id/setting"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="#0099D2"
-        android:text="Setting" />
 
     <Button
         android:id="@+id/quitgame"

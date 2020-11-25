@@ -7,26 +7,51 @@
     android:orientation="vertical"
     android:background="#C9C9C9"
     android:visibility="visible"
-    tools:context=".Hard_level">
+    tools:context=".Newgame"
+    tools:layout_editor_absoluteY="81dp">
+
 
     <TextView
         android:id="@+id/tv_level"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#0099D2"
         android:text="Level : 1"
-        android:textColor="#FFFFFF"
+        android:paddingLeft="10dp"
+        android:textStyle="bold"
+        android:textColor="#000"
         android:textSize="30sp" />
+
+    <SeekBar
+        android:id="@+id/seekBar2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:minHeight="100dp"
+        android:maxHeight="100dp"
+        android:progressTint="#DCB40B"
+        android:thumb="@drawable/icon_star"
+        />
+
+    <TextView
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:text="Your Progress"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/tv_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="#0099D2"
         android:text="0"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp" />
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="#0099D2"
+        android:textSize="50sp" />
 
 
     <EditText
@@ -34,10 +59,11 @@
         style="@style/Widget.AppCompat.AutoCompleteTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="200dp"
         android:background="#0099D2"
         android:digits="1234567890"
         android:ems="10"
+        android:gravity="center"
         android:hint="what was the number??"
         android:inputType="numberSigned"
         android:textColor="#FFFFFF"
@@ -50,10 +76,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="#0099D2"
+        android:background="#4CAF50"
         android:text="Confirm"
+        android:textStyle="bold"
         android:textColor="#FFFFFF"
-        android:textColorHint="#0099D2"
+        android:textColorHint="#D9534F"
         android:textSize="30sp" />
+
 
 </LinearLayout>

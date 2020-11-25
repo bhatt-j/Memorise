@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="#C9C9C9"
     tools:context=".Help">
 
@@ -23,45 +24,43 @@
         android:textColor="#0099D2"
         android:textSize="40dp"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.119" />
+      />
 
     <TextView
         android:id="@+id/htptxt"
-        android:layout_width="337dp"
+        android:layout_width="match_parent"
         android:layout_height="53dp"
-        android:layout_marginStart="37dp"
-        android:layout_marginLeft="37dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="37dp"
-        android:layout_marginRight="37dp"
+        android:layout_marginTop="46dp"
         android:shadowColor="#000"
         android:shadowDx="-2"
         android:shadowDy="+2"
         android:shadowRadius="1"
         android:text="How To Play?"
+        android:gravity="center"
         android:textColor="#FFFFFF"
         android:textSize="36sp"
         android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/helptxt" />
+        />
+
+    <TextView
+        android:id="@+id/htp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:textStyle="bold"
+        android:text="Here the system will generate random number which will be disappeared in few seconds. Player has to recalls the correct number. If number is guessed wrong then game will end there and then. A new game will be started from the very beginning.  "
+        android:background="#9F000000"
+        />
 
     <TextView
         android:id="@+id/rules"
-        android:layout_width="337dp"
+        android:layout_width="match_parent"
         android:layout_height="53dp"
-        android:layout_marginStart="37dp"
-        android:layout_marginLeft="37dp"
-        android:layout_marginTop="176dp"
-        android:layout_marginEnd="37dp"
-        android:layout_marginRight="37dp"
+        android:layout_marginTop="16dp"
         android:shadowColor="#000"
+        android:gravity="center"
         android:shadowDx="-2"
         android:shadowDy="+2"
         android:shadowRadius="1"
@@ -69,8 +68,17 @@
         android:textColor="#FFFFFF"
         android:textSize="36sp"
         android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/helptxt" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+       />
+    <TextView
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:textStyle="bold"
+        android:text="1) Once the game ends level sets to 1.
+        2) Number can be guessed once."
+        android:background="#9F000000"
+        />
+</LinearLayout>
